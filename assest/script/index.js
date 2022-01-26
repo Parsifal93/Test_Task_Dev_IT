@@ -72,3 +72,31 @@ function* getRandomInit(from, to) {
   
   console.log(num);
   
+  // f) Реализовать класс очереди запросов. Методы queue, deQueue, queuing обязательно реализовать. Задано количество одновременно выполняемых запросов. В качестве запросов использовать Promise которые резолвятся через случайное время. Пример ниже можно доработать как Вы решите.
+class ConcurencyQueue {
+    constructor(concurency){
+      this.concurency = concurency;
+      
+    }
+  
+     firstPromise = new Promise((resolve, reject) => {
+  
+    queue(resolve);{
+     console.log(resolve);
+  
+     setTimeout(()=> resolve(concurency * 2),1000)
+      
+    }
+         resolve(concurency);
+  })
+  deQueue(requestId){
+  Promise.allSeries(requestId).
+  then((results) =>results.forEach((result) => console.log(result.status)));
+    
+  };
+  queuing(requestId){
+    requestId.then(function(){
+         console.log('Обработка');
+    });
+  }
+  }
