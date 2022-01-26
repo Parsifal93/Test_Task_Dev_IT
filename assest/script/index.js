@@ -9,3 +9,24 @@ function getRandomInt(min, max) {
   let values = Array.from({ length: 5 }, () => getRandomInt(1, 10));
   let values1 = Array.from({ length: 7 }, () => getRandomInt(1, 10));
   console.log(values, values1);
+
+  //b)Найти в строке все числа. Учитывать дробные числа.
+
+let array = [
+    "У",
+    "Пети",
+    "было",
+    10,
+    "яблок",
+    2.5,
+    "он",
+    "отдал",
+    "Маше",
+    3.5,
+    "Васе",
+    "и",
+    4,
+    "оставил",
+  ];
+  let result = array.filter((e) => typeof e === "number");
+  console.log(result);
