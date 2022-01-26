@@ -36,3 +36,14 @@ let array = [
 let str = "assdssddffffrrreeeweggggg";
 let str1 = str.replace(/assdssddffffrrreeeweggggg/gi, "as2ds2d2f4r3e3weg5");
 console.log(str1);
+
+
+//d) Реализовать функцию get. Которая по пути ищет значение в объекте или в массиве.
+
+const exampleArr = [
+    { a: { b: [{ c: 4 }, { c: 5 }] } },
+    [{ a: { b: [{ c: 6 }, { c: 7 }] } }],
+  ];
+  const exampleObj = { a: { b: { c: 5 } } };
+  console.log(_.get(exampleArr, "0.a.b.1.c"));
+  console.log(_.get(exampleObj, "a.b"));
