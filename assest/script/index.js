@@ -30,3 +30,9 @@ let array = [
   ];
   let result = array.filter((e) => typeof e === "number");
   console.log(result);
+
+  //c).Замена подряд идущих букв на их количество.
+
+let str = "assdssddffffrrreeeweggggg";
+let str1 = str.replace(/assdssddffffrrreeeweggggg/gi, "as2ds2d2f4r3e3weg5");
+console.log(str1);
