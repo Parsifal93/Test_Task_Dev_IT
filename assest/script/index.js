@@ -47,3 +47,28 @@ const exampleArr = [
   const exampleObj = { a: { b: { c: 5 } } };
   console.log(_.get(exampleArr, "0.a.b.1.c"));
   console.log(_.get(exampleObj, "a.b"));
+
+  //e)Создать функцию которая при каждом вызове вернет случайное число от 0 до 100 без повторений. Если закончились варианты вернет ошибку. Реализовать через замыкание.
+
+function* getRandomInit(from, to) {
+    let prev, cur;
+    while (true) {
+      while (prev == cur) {
+        cur = Math.floor(from + Math.random() * (to - from));
+      }
+      yield cur;
+      prev = cur;
+    }
+  }
+  let rnd = getRandomInit(0, 100);
+  let numbers = [];
+  
+  for (let i = 0; i < 100; i++) {
+    if (!~numbers.indexOf(rnd)) {
+      numbers.push(rnd.next().value);
+    }
+  }
+  let num = [...new Set(numbers)];
+  
+  console.log(num);
+  
